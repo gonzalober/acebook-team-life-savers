@@ -116,6 +116,7 @@ As we changed our repo from a full application to a backend API, a few things ha
 ![log-in-diagram](https://tinyurl.com/login-feature-diagram)
 
 Our dislikes DB is the same as our likes DB.
+
 ![dislikes db](https://tinyurl.com/post-likes-dislikes)
 
 
