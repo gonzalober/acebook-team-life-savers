@@ -1,32 +1,29 @@
-# AceBook
+# AceBook API
 
-REQUIRED INSTRUCTIONS:
+# Where The API Lives:
+The AceBook API is hosted here on Heroku: [AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+# How To Use:
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+There are only 3 paths that do not require token authentication:
 
-2. The card wall is here: <please update>
+  1. `POST /users#create` This allows users to create a an account.
+  2. `GET /logged_in` This can be used to check if a user is logged in.
+  3. `GET /sessions#new` This is the page you'll see when you click on the link above.
+ 
+On creation of an account, a token is created and passed through to the requester. This is also done on log-in. 
+In order to use this API, you will always need to pass through your authorization token via a header as so:
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+`post '/log-in', params {}, headers: { Authorization: <YOUR NUM HERE> }`
 
-## Quickstart
+Functionality exists for the following:
 
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
-# See AceBook In Action:
-[AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/)
-
+  - Users can create posts
+  - Users can comment on posts
+  - Users can like a post one time
+  - Users can unlike a post (the routing is not completed for this feature)
+  - Users can sign up, log in, and log out
+ 
 # Planning
 ## User Stories
 
@@ -112,11 +109,15 @@ So that I can send a personal message,
 I would like to be able to private message any user.
 ```
 
-## Database commands
+## Some Diagrams From Our Process:
 
-rails db:create
-rails db:migrate
-rails db:create RAILS_ENV=test
-rails db:migrate RAILS_ENV=test
+As we changed our repo from a full application to a backend API, a few things have changed. Here were some of our initial planning diagrams, though some aspects are no longer fully relevant:
 
-rails db:drop
+![log-in-diagram](https://tinyurl.com/login-feature-diagram)
+
+Our dislikes DB is the same as our likes DB.
+![dislikes db](https://tinyurl.com/post-likes-dislikes)
+
+
+![comments diagram](https://tinyurl.com/comment-database)
+
