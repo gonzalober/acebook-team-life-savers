@@ -1,7 +1,8 @@
 # AceBook API
 
 # Where The API Lives:
-The AceBook API is hosted here on Heroku: [AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/)
+The AceBook API is hosted here on Heroku: [AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/).
+Front-end repository (https://github.com/charlie-galb/acebook-team-lifesavers-frontend)
 
 # How To Use:
 
